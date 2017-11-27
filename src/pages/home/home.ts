@@ -4,12 +4,12 @@ import { NavController } from 'ionic-angular';
 
 import { BernoulliPage } from '../bernoulli/bernoulli';
 import { BinomialPage } from '../binomial/binomial';
-import { ChiPage } from '../chi/chi';
-import { ExponencialPage } from '../exponencial/exponencial';
-import { HipergeometricaPage } from '../hipergeometrica/hipergeometrica';
-import { NormalPage } from '../normal/normal';
+import { ChiPage } from '../chi/chi'; 
+import { ExponencialPage } from '../exponencial/exponencial'; 
+import { HipergeometricaPage } from '../hipergeometrica/hipergeometrica'; 
+import { NormalPage } from '../normal/normal'; 
 import { PoissonPage } from '../poisson/poisson';
-import { TstudentPage } from '../tstudent/tstudent';
+import { TstudentPage } from '../tstudent/tstudent'; 
 
 @Component({
   selector: 'page-home',
@@ -51,11 +51,11 @@ export class Home {
   }
 
   chi(){
-    this.navCtrl.push(ChiPage);
+   this.navCtrl.push(ChiPage);
   }
 
   tstudent(){
-    this.navCtrl.push(TstudentPage);
+   this.navCtrl.push(TstudentPage);
   }
 
 }
