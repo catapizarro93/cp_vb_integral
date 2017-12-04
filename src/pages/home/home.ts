@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { NavController } from 'ionic-angular';
+import { NavController, MenuController } from 'ionic-angular';
 
 import { BernoulliPage } from '../bernoulli/bernoulli';
 import { BinomialPage } from '../binomial/binomial';
@@ -15,12 +15,16 @@ import { TstudentPage } from '../tstudent/tstudent';
   selector: 'page-home',
   templateUrl: 'home.html'
 })
-export class Home {
+export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public menuCtrl: MenuController) {
     
   }
 
+  ionViewDidLoad (){
+    this.menuCtrl.enable(true, 'authenticated');
+    this.menuCtrl.enable(false, 'unauthenticated');
+  }
 
   bernoulli(){
     this.navCtrl.push(BernoulliPage);

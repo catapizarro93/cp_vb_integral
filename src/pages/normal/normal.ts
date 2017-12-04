@@ -1,6 +1,6 @@
 
 import { Component } from '@angular/core';
-import { NavController, NavParams, AlertController } from 'ionic-angular';
+import { NavController, NavParams, AlertController, MenuController } from 'ionic-angular';
 import { FormBuilder, Validators } from '@angular/forms';
 import * as stat from "simple-statistics";
 import * as math from "mathjs";
@@ -20,8 +20,9 @@ export class NormalPage {
   public text8: String;
   public buttonDisabled = false;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public formBuilder: FormBuilder, public alertCtrl: AlertController) {
-    this.prueba = formBuilder.group({
+  constructor(public navCtrl: NavController, public navParams: NavParams, public formBuilder: FormBuilder, public alertCtrl: AlertController, public menuCtrl: MenuController) {
+
+        this.prueba = formBuilder.group({
       media: ['', Validators.compose([Validators.required])],
       desvest: ['', Validators.compose([Validators.required])],
       x: ['', Validators.compose([Validators.required])]
@@ -47,6 +48,11 @@ export class NormalPage {
     
     this.par_text = text6 + text7 + text8;
     
+  }
+
+  ionViewDidLoad (){
+    this.menuCtrl.enable(true, 'authenticated');
+    this.menuCtrl.enable(false, 'unauthenticated');
   }
 
   exponencialCalc(){

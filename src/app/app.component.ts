@@ -3,7 +3,6 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { Home } from '../pages/home/home';
 import { BernoulliPage } from '../pages/bernoulli/bernoulli';
 import { BinomialPage } from '../pages/binomial/binomial';
 import { ChiPage } from '../pages/chi/chi';
@@ -12,6 +11,8 @@ import { HipergeometricaPage } from '../pages/hipergeometrica/hipergeometrica';
 import { NormalPage } from '../pages/normal/normal';
 import { PoissonPage } from '../pages/poisson/poisson';
 import { TstudentPage } from '../pages/tstudent/tstudent';
+import { LoginPage} from '../pages/login/login';
+import { HomePage} from '../pages/home/home';
 
 
 @Component({
@@ -20,7 +21,7 @@ import { TstudentPage } from '../pages/tstudent/tstudent';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = Home;
+  rootPage: any = LoginPage;
 
   pagesDiscretas: Array<{title: string, component: any}>;
   pagesContinuas: Array<{title: string, component: any}>;
@@ -31,7 +32,7 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pagesInicio = [
-      { title: 'Inicio', component: Home }
+      { title: 'Inicio', component: HomePage }
     ];
 
    this.pagesDiscretas = [

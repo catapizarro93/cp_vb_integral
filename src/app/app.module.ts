@@ -6,7 +6,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { MyApp } from './app.component';
 
-import { Home } from '../pages/home/home';
+import { LoginPage} from '../pages/login/login';
 import { MathJaxDirective } from '../directives/math-jax/math-jax';
 import { BernoulliPage } from '../pages/bernoulli/bernoulli';
 import { BinomialPage } from '../pages/binomial/binomial';
@@ -16,11 +16,31 @@ import { HipergeometricaPage } from '../pages/hipergeometrica/hipergeometrica';
 import { NormalPage } from '../pages/normal/normal';
 import { PoissonPage } from '../pages/poisson/poisson';
 import { TstudentPage } from '../pages/tstudent/tstudent';
+import { HomePage } from "../pages/home/home";
+import { RegisterPage} from '../pages/register/register';
+
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireModule } from 'angularfire2';
+import { FirebaseService } from '../providers/firebase-service/firebase-service';
+
+
+let firebaseConfig = {
+  apiKey: "AIzaSyAiG_6lKEeqOQueYe1jEByLm3XF1kpbeww",
+  authDomain: "integral-ii-y-iii.firebaseapp.com",
+  databaseURL: "https://integral-ii-y-iii.firebaseio.com",
+  projectId: "integral-ii-y-iii",
+  storageBucket: "",
+  messagingSenderId: "1032435476103"
+};
+ 
 
 @NgModule({
   declarations: [
     MyApp,
-    Home,
+    LoginPage,
+    HomePage,
+    RegisterPage,
     BernoulliPage,
     BinomialPage,
     ChiPage,
@@ -33,12 +53,17 @@ import { TstudentPage } from '../pages/tstudent/tstudent';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    Home,
+    LoginPage,
+    HomePage,
+    RegisterPage,
     BernoulliPage,
     BinomialPage,
     ChiPage,
@@ -51,7 +76,8 @@ import { TstudentPage } from '../pages/tstudent/tstudent';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    FirebaseService
     ]
 })
 export class AppModule {}

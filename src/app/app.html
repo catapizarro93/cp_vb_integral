@@ -1,4 +1,4 @@
-<ion-menu [content]="content">
+<ion-menu id="authenticated"[content]="content">
     <ion-header>
       <ion-toolbar color="home-naranjo">
         <ion-title>Menu</ion-title>
@@ -31,5 +31,22 @@
   
   </ion-menu>
   
+
+  <ion-menu id="unauthenticated" [content]="content">
+      <ion-header>
+        <ion-toolbar color="home-naranjo">
+          <ion-title>Menu</ion-title>
+        </ion-toolbar>
+      </ion-header>
+    
+      <ion-content>
+               
+        <p style="text-align: center; color: grey;"><small>Desarrollado por el Departamento de Matemática y Estadística</small></p>
+        <img src="assets/imgs/Lab[e]saM.png">
+        <p style="text-align: center; color: grey;"><small>&copy; 2017 | Universidad de Playa Ancha de Ciencias de la Educación</small></p>
+      </ion-content>
+    
+    </ion-menu>
+
   <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
   <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
