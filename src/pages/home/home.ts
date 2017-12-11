@@ -10,6 +10,7 @@ import { HipergeometricaPage } from '../hipergeometrica/hipergeometrica';
 import { NormalPage } from '../normal/normal'; 
 import { PoissonPage } from '../poisson/poisson';
 import { TstudentPage } from '../tstudent/tstudent'; 
+import { FrecuenciaPage } from '../frecuencia/frecuencia'; 
 
 @Component({
   selector: 'page-home',
@@ -60,6 +61,10 @@ export class HomePage {
 
   tstudent(){
    this.navCtrl.push(TstudentPage);
+  }
+
+  frecuencia(){
+    this.navCtrl.push(FrecuenciaPage);
   }
 
 }

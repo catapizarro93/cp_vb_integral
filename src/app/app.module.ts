@@ -18,6 +18,7 @@ import { PoissonPage } from '../pages/poisson/poisson';
 import { TstudentPage } from '../pages/tstudent/tstudent';
 import { HomePage } from "../pages/home/home";
 import { RegisterPage} from '../pages/register/register';
+import { FrecuenciaPage} from '../pages/frecuencia/frecuencia';
 
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -49,7 +50,8 @@ let firebaseConfig = {
     NormalPage,
     PoissonPage,
     TstudentPage,
-    MathJaxDirective
+    MathJaxDirective,
+    FrecuenciaPage
   ],
   imports: [
     BrowserModule,
@@ -71,7 +73,8 @@ let firebaseConfig = {
     HipergeometricaPage,
     NormalPage,
     PoissonPage,
-    TstudentPage
+    TstudentPage,
+    FrecuenciaPage
   ],
   providers: [
     StatusBar,

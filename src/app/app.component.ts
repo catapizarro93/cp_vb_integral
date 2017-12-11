@@ -13,6 +13,7 @@ import { PoissonPage } from '../pages/poisson/poisson';
 import { TstudentPage } from '../pages/tstudent/tstudent';
 import { LoginPage} from '../pages/login/login';
 import { HomePage} from '../pages/home/home';
+import { FrecuenciaPage} from '../pages/frecuencia/frecuencia';
 
 
 @Component({
@@ -39,7 +40,8 @@ export class MyApp {
      { title: 'Bernoulli', component: BernoulliPage},
      { title: 'Binomial', component: BinomialPage},
      { title: 'Poisson', component: PoissonPage},
-     { title: 'Hipergeométrica', component: HipergeometricaPage}
+     { title: 'Hipergeométrica', component: HipergeometricaPage},
+     { title: 'Frecuencia', component: FrecuenciaPage}
     ];
 
     this.pagesContinuas = [

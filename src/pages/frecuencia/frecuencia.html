@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar color="home-navbar">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Tabla de Frecuencia</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-item item-divider color="home-cardTitle">
+      Definición
+    </ion-item>
+
+    <ion-card-content [MathJax]="def_text" style="text-align: justify;">
+      {{def_text}}
+    </ion-card-content>
+
+    <ion-item item-divider color="home-cardTitle">
+      Parámetros
+    </ion-item>
+      <ion-card-content [MathJax]="par_text" style="text-align: justify;"> 
+        {{par_text}}
+      </ion-card-content>
+    <ion-item item-divider color="home-cardTitle">
+        Cálculo
+    </ion-item>
+    
+
+
+    <ion-item item-divider color="primary" *ngIf="visible" color="home-cardTitle">
+      Resultados
+    </ion-item>
+
+    <ion-card-content *ngIf="visible" [MathJax]="res_text" style="text-align: justify;">
+      {{res_text}}
+      <p>&nbsp;</p>
+    </ion-card-content>
+  
+    <p style="text-align: center; color: grey;"><small>&copy; 2017 | Universidad de Playa Ancha de Ciencias de la Educación</small></p>
+    <img src="assets/imgs/Lab[e]saM.png">
+    <br>
+    <br>
+  </ion-content>
